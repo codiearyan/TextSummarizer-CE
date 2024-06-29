@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function fetchSummary(content, level) {
-    fetch("http://localhost:3000/summarize", {
+    fetch("https://textsummarizer-ce.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
