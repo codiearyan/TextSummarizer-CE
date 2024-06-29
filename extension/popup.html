@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Summarizer</title>
+    <style>
+        body {
+            width: 300px;
+            font-family: Arial, sans-serif;
+            padding: 15px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        #summarizeBtn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        #summarizeBtn:hover {
+            background-color: #45a049;
+        }
+
+        #summary {
+            margin-top: 15px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .summary-line {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .summary-line.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #loader {
+            text-align: center;
+            display: none;
+        }
+
+        .slider-container {
+            margin-bottom: 15px;
+        }
+
+        #summaryLevel {
+            width: 100%;
+        }
+
+        #summaryLevelLabel {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Page Summarizer</h1>
+    <div class="slider-container">
+        <input type="range" id="summaryLevel" min="1" max="5" value="3">
+        <label id="summaryLevelLabel" for="summaryLevel">Summary Level: Medium</label>
+    </div>
+    <button id="summarizeBtn">Summarize Page</button>
+    <div id="loader">Summarizing...</div>
+    <div id="summary"></div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
